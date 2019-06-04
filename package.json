@@ -1,0 +1,30 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "Leetcode project",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halaproliu/LeetCode.git"
+  },
+  "keywords": [
+    "LeetCode",
+    "algorithm"
+  ],
+  "author": "halapro.liu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/halaproliu/LeetCode/issues"
+  },
+  "homepage": "https://github.com/halaproliu/LeetCode#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  }
+}
