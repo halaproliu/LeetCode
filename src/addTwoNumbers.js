@@ -4,7 +4,7 @@ function ListNode(val) {
 }
 
 var addTwoNumbers = function(l1, l2) {
-  let dummy = new ListNode(0)
+  let dummy = new ListNode(0) // 设置链表开头为0的节点
   let cur = dummy
   let carry = 0 // 进位
   while (l1 != null || l2 != null) {
@@ -18,7 +18,7 @@ var addTwoNumbers = function(l1, l2) {
     if (l2 != null) l2 = l2.next
   }
   if (carry > 0) cur.next = new ListNode(carry)
-  return dummy.next
+  return dummy.next // return为0节点后的一个节点即为开始节点
 }
 
 module.exports = {
