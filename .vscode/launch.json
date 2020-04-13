@@ -23,6 +23,6 @@
     "type": "node",
     "request": "launch",
     "name": "leetcode",
-    "program": "${workspaceFolder}/src/lengthOfLongestSubstring.js"
+    "program": "${workspaceFolder}/src/reverse.js"
   }]
 }
