@@ -1,12 +1,12 @@
-var longestPalindrome = require('../src/longestPalindrome')
-var expect = require('chai').expect
+import longestPalindrome from '../src/longestPalindrome'
+import { expect } from 'chai'
 
-describe('longestPalindrome', function () {
-    it('longestPalindrome test aabbcbbdd', function () {
+describe('longestPalindrome', () => {
+    it('longestPalindrome test aabbcbbdd', () => {
         expect(longestPalindrome('aabbcbbdd')).to.equal('bbcbb')
     })
 
-    it('longestPalindrome test cdaajksbb', function () {
+    it('longestPalindrome test cdaajksbb', () => {
         expect(longestPalindrome('cdaajksbb')).to.equal('bb')
     })
 })

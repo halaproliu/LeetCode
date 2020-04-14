@@ -1,14 +1,12 @@
-var module = require('../src/addTwoNumbers')
-var addTwoNumbers = module.addTwoNumbers
-var chai = require('chai')
-var expect = chai.expect
+import { addTwoNumbers } from '../src/addTwoNumbers'
+import { expect } from 'chai'
 
-function ListNode(val) {
+function ListNode (val) {
   this.val = val
   this.next = null
 }
 
-function initListNode(arr) {
+function initListNode (arr) {
   var node = null
   var len = arr.length
   var tempArr = []
@@ -25,8 +23,8 @@ function initListNode(arr) {
 }
 
 
-describe('addTwoNumbers', function() {
-  it('should return the right ListNode', function() {
+describe('addTwoNumbers', () => {
+  it('should return the right ListNode', () => {
     var l1 = initListNode([2, 4, 3])
     var l2 = initListNode([5, 6, 4])
     var l3 = initListNode([7, 0, 8])
