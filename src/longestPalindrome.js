@@ -2,13 +2,13 @@
  * @param {string} s
  * @return {string}
  */
-var longestPalindrome = function(s) {
+var longestPalindrome = function (s) {
     if (!s || s.length < 2) return s
     let len = s.length;
     let start = 0
     let end = 0
     const getPalindrome = (l, r) => {
-        while(l >= 0 && r < s.length && s[l] === s[r]) {
+        while (l >= 0 && r < s.length && s[l] === s[r]) {
             l--
             r++
         }
@@ -28,5 +28,4 @@ var longestPalindrome = function(s) {
     return s.slice(start, end + 1)
 };
 
-var result = longestPalindrome('abb')
-console.log(result)
+module.exports = longestPalindrome
