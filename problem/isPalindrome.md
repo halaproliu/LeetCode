@@ -71,6 +71,29 @@ var isPalindrome = function(x) {
 };
 ```
 
+- 二分对比法
+
+```js
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+
+    if(x<0) return false;
+    let flag = true;
+    x = x.toString()
+
+    for(let i=0, len=x.length; i<len/2; i++){
+        if(x[i] !== x[len-1-i]){
+            flag = false;
+            break
+        }
+    }
+    return flag
+};
+```
+
 
 ### 执行结果
 
@@ -95,3 +118,14 @@ var isPalindrome = function(x) {
 | 提交结果 | 执行用时 | 内存消耗 |
 |:-------:|:------:|:-------:|
 |   通过   |  220ms | 45.2MB |
+
+- 二分对比法
+
+```js
+执行用时 : 256 ms, 在所有 JavaScript 提交中击败了33.33%的用户
+内存消耗 : 45.7 MB, 在所有 JavaScript 提交中击败了60.00%的用户
+```
+
+| 提交结果 | 执行用时 | 内存消耗 |
+|:-------:|:------:|:-------:|
+|   通过   |  256ms | 45.7MB |

@@ -28,8 +28,24 @@ var isPalindrome = function(x) {
     return (rev === x) || (~~(rev / 10) === x)
 };
 
-var a = isPalindrome(12321)
-console.log(a)
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+
+    if(x < 0) return false;
+    let flag = true;
+    x = x.toString()
+
+    for(let i=0, len = x.length; i < len/2; i++){
+        if(x[i] !== x[len - 1 - i]){
+            flag = false;
+            break
+        }
+    }
+    return flag
+};
 
 
 export {

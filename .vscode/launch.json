@@ -23,6 +23,6 @@
     "type": "node",
     "request": "launch",
     "name": "leetcode",
-    "program": "${workspaceFolder}/src/reverse.js"
+    "program": "${workspaceFolder}/src/numberOfSubarrays.js"
   }]
 }
