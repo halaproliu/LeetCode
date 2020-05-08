@@ -32,7 +32,7 @@ var a = isPalindrome(12321)
 console.log(a)
 
 
-// export {
-//     violence,
-//     isPalindrome
-// }
+export {
+    violence,
+    isPalindrome
+}
