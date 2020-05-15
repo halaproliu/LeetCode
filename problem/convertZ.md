@@ -1,9 +1,6 @@
 # Z 字形变换
 
-<h2 class="md-title">
-    <span class="md-text">问题描述</span>
-    <span class="md-angle"></span>
-</h2>
+<h2 style="margin-top: 30px; margin-bottom: 15px; padding: 0px; font-weight: bold; color: black; border-bottom: 2px solid rgb(239, 112, 96); font-size: 1.3em;" data-tool="mdnice编辑器" data-id="heading-1"><span style="display: none;" class="prefix"></span><span style="display: inline-block; font-weight: bold; background: rgb(239, 112, 96); color: #ffffff; padding: 3px 10px 1px; border-top-right-radius: 3px; border-top-left-radius: 3px; margin-right: 3px;" class="content">问题描述</span><span class="suffix"></span><span style="display: inline-block; vertical-align: bottom; border-bottom: 36px solid #efebe9; border-right: 20px solid transparent;"> </span></h2>
 
 将一个给定字符串根据给定的行数，以从上往下、从左到右进行 Z 字形排列。
 
@@ -48,10 +45,7 @@ T     S     G
 链接：https://leetcode-cn.com/problems/zigzag-conversion
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
-<h2 class="md-title">
-    <span class="md-text">求解</span>
-    <span class="md-angle"></span>
-</h2>
+<h2 style="margin-top: 30px; margin-bottom: 15px; padding: 0px; font-weight: bold; color: black; border-bottom: 2px solid rgb(239, 112, 96); font-size: 1.3em;" data-tool="mdnice编辑器" data-id="heading-1"><span style="display: none;" class="prefix"></span><span style="display: inline-block; font-weight: bold; background: rgb(239, 112, 96); color: #ffffff; padding: 3px 10px 1px; border-top-right-radius: 3px; border-top-left-radius: 3px; margin-right: 3px;" class="content">求解</span><span class="suffix"></span><span style="display: inline-block; vertical-align: bottom; border-bottom: 36px solid #efebe9; border-right: 20px solid transparent;"> </span></h2>
 
 此解思路为：
 - 创建一个数组，每一个元素为一行。
@@ -93,10 +87,7 @@ var convert = function(s, numRows) {
 };
 ```
 
-<h2 class="md-title">
-    <span class="md-text">执行结果</span>
-    <span class="md-angle"></span>
-</h2>
+<h2 style="margin-top: 30px; margin-bottom: 15px; padding: 0px; font-weight: bold; color: black; border-bottom: 2px solid rgb(239, 112, 96); font-size: 1.3em;" data-tool="mdnice编辑器" data-id="heading-1"><span style="display: none;" class="prefix"></span><span style="display: inline-block; font-weight: bold; background: rgb(239, 112, 96); color: #ffffff; padding: 3px 10px 1px; border-top-right-radius: 3px; border-top-left-radius: 3px; margin-right: 3px;" class="content">执行结果</span><span class="suffix"></span><span style="display: inline-block; vertical-align: bottom; border-bottom: 36px solid #efebe9; border-right: 20px solid transparent;"> </span></h2>
 
 ```js
 执行用时 :112 ms, 在所有 JavaScript 提交中击败了52.15%的用户
@@ -106,33 +97,3 @@ var convert = function(s, numRows) {
 | 提交结果 | 执行用时 | 内存消耗 |
 |:------:|:------:|:-------:|
 |   通过  | 112ms  |  39.5MB |
-
-<style>
-.md-title {
-    margin-top: 30px;
-    margin-bottom: 15px;
-    padding: 0px;
-    font-weight: bold;
-    color: black;
-    border-bottom: 2px solid rgb(239, 112, 96);
-    font-size: 1.3em;
-}
-
-.md-text {
-    display: inline-block;
-    font-weight: bold;
-    background: rgb(239, 112, 96);
-    color: #ffffff;
-    padding: 3px 10px 1px;
-    border-top-right-radius: 3px;
-    border-top-left-radius: 3px;
-    margin-right: 3px;
-}
-
-.md-angle {
-    display: inline-block;
-    vertical-align: bottom;
-    border-bottom: 36px solid #efebe9;
-    border-right: 20px solid transparent;
-}
-</style>
