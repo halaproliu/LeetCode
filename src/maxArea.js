@@ -3,10 +3,17 @@
  * @return {number}
  */
 var maxArea = function(height) {
-    let len = height.length
-    let w = 2
-    let h = 0
-    for (let i = 2; i <= len; i++) {
-        
+    let max = 0
+    let left = 0
+    let right = height.length - 1
+    while (left < right) {
+        let current = (right - left) * Math.min(height[left], height[right])
+        max = current > max ? current : max
+        if (height[left] < height[right]) {
+            left++
+        } else {
+            right--
+        }
     }
+    return max
 };
