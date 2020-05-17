@@ -28,4 +28,4 @@ var longestPalindrome = function (s) {
     return s.slice(start, end + 1)
 };
 
-module.exports = longestPalindrome
+export default longestPalindrome
