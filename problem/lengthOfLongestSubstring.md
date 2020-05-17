@@ -77,7 +77,7 @@ var lengthOfLongestSubstring = function(s) {
   const len = s.length
   let r = -1
   let max = 0
-  for (let i = 0; i < s.length; i++) {
+  for (let i = 0; i < len; i++) {
     if (i !== 0) {
       strs.delete(s.charAt(i - 1))
     }
