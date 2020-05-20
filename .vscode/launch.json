@@ -23,6 +23,6 @@
     "type": "node",
     "request": "launch",
     "name": "leetcode",
-    "program": "${workspaceFolder}/src/numberOfSubarrays.js"
+    "program": "${workspaceFolder}/src/myAtoi.js"
   }]
 }
