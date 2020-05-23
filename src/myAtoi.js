@@ -61,5 +61,3 @@ myAtoi = function (str) {
 }
 
 export default myAtoi
-var a = myAtoi('-+55')
-console.log(a)

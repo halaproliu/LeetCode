@@ -21,9 +21,7 @@ var isPalindrome = function(x) {
     let rev = 0;
     while (rev < x) {
         rev = rev * 10 + x % 10;
-        console.log(rev)
         x = ~~(x / 10);
-        console.log(x)
     }
     return (rev === x) || (~~(rev / 10) === x)
 };

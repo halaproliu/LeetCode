@@ -8,16 +8,18 @@ function test (fn, nums, target, result) {
   expect(fn(nums, target)[1]).to.equal(result[1])
 }
 
-describe('violence', () => {
-  it('should return the correct index Array', () => {
+describe('twoSum', () => {
+  it('violence nums=[2, 7, 11, 15], target=9', () => {
     test(violence, [2, 7, 11, 15], 9, [0, 1])
+  })
+  it('violence nums=[2, 7, 11, 15], target=22', () => {
     test(violence, [2, 7, 11, 15], 22, [1, 3])
   })
-})
 
-describe('hashmap', () => {
-  it('should return the correct index Array', () => {
+  it('hashmap nums=[2, 7, 11, 15], target=9', () => {
     test(hashmap, [2, 7, 11, 15], 9, [0, 1])
+  })
+  it('hashmap nums=[2, 7, 11, 15], target=22', () => {
     test(hashmap, [2, 7, 11, 15], 22, [1, 3])
   })
 })
