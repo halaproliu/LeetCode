@@ -44,18 +44,18 @@ var lengthOfLongestSubstring = function(s) {
  * @param {string} s
  * @return {number}
  */
-// var lengthOfLongestSubstring = function(s) {
-//   const map = new Map()
-//   let max = 0
-//   let r = 0
-//   for (let l = 0; l < s.length; l++) {
-//     if (map.has(s[l])) {
-//       r = Math.max(map.get(s[l]) + 1, r)
-//     }
-//     max = Math.max(max, r - l + 1)
-//     map.set(s[l], l)
-//   }
-//   return max
-// };
+var lengthOfLongestSubstring = function(s) {
+  const map = new Map()
+  let max = 0
+  let r = 0
+  for (let l = 0; l < s.length; l++) {
+    if (map.has(s[l])) {
+      r = Math.max(map.get(s[l]) + 1, r)
+    }
+    max = Math.max(max, l - r + 1)
+    map.set(s[l], l)
+  }
+  return max
+};
 
 export default lengthOfLongestSubstring
