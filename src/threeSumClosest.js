@@ -38,7 +38,4 @@ var threeSumClosest = function (nums, target) {
     return ans
 };
 
-let a = threeSumClosest([1, 1, -1, -1, 3], -1)
-console.log(a)
-
 export default threeSumClosest
