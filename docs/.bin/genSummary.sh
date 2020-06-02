@@ -13,8 +13,6 @@ function inputCategories() {
     if [ -d $1 ]; then
         fileList=$(ls $1) # 文件列表
         i=0               # 菜单子排序
-        fileList=$(echo $fileList | sort)
-        echo $fileList
         for filename in $fileList; do
             if [[ $filename != "README.md" ]]; then
                 let "i++"
