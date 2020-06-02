@@ -34,7 +34,7 @@
       "type": "node",
       "request": "launch",
       "name": "leetcode",
-      "program": "${workspaceFolder}/src/fourSum.js"
+      "program": "${workspaceFolder}/src/removeNthFromEnd.js"
     }
   ]
 }

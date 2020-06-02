@@ -1,15 +1,6 @@
 import fourSum from '../src/fourSum'
+import { isArrayEqual } from '../utils/array'
 import { expect } from 'chai'
-
-function isEqual (arr, expectedArr) {
-    let expectedStr = JSON.stringify(expectedArr)
-    let sum = 0
-    for (let i = 0; i < arr.length; i++) {
-        let str = JSON.stringify(arr[i])
-        sum += Number(!!expectedStr.includes(str))
-    }
-    return sum === arr.length
-}
 
 describe('fourSum', () => {
     it('test nums = [1, 0, -1, 0, -2, 2], target = 0', () => {
@@ -20,7 +11,7 @@ describe('fourSum', () => {
             [-2, -1, 1, 2],
             [-2, 0, 0, 2]
         ]
-        expect(isEqual(fourSum(arr, target), res)).to.equal(true)
+        expect(isArrayEqual(fourSum(arr, target), res)).to.equal(true)
     })
 
     it('test nums = [0, 0, 0, 0], target = 0', () => {
@@ -29,7 +20,7 @@ describe('fourSum', () => {
         let res = [
             [0, 0, 0, 0]
         ]
-        expect(isEqual(fourSum(arr, target), res)).to.equal(true)
+        expect(isArrayEqual(fourSum(arr, target), res)).to.equal(true)
     })
 
     it('test nums = [2, 1, 0, -1], target = 2', () => {
@@ -38,6 +29,6 @@ describe('fourSum', () => {
         let res = [
             [-1, 0, 1, 2]
         ]
-        expect(isEqual(fourSum(arr, target), res)).to.equal(true)
+        expect(isArrayEqual(fourSum(arr, target), res)).to.equal(true)
     })
 })
