@@ -7,6 +7,9 @@
     "test": "test"
   },
   "scripts": {
+    "gen": "bash .bin/genSummary.sh",
+    "dev": "gitbook serve . docs",
+    "build": "gitbook build . docs",
     "test": "mocha --require @babel/register"
   },
   "repository": {
