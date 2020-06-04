@@ -34,7 +34,7 @@
       "type": "node",
       "request": "launch",
       "name": "leetcode",
-      "program": "${workspaceFolder}/src/isValid.js"
+      "program": "${workspaceFolder}/src/mergeTwoLists.js"
     }
   ]
 }
