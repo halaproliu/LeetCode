@@ -13,7 +13,7 @@ h3:before {
     content: attr(id);
     position: absolute;
     left: 0;
-    top: 3px;
+    top: 5px;
     background: rgb(239, 112, 96);
     color: #fff;
     padding: 3px 10px 1px; 
