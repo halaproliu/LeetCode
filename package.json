@@ -10,6 +10,7 @@
     "gen": "bash .bin/genSummary.sh",
     "dev": "gitbook serve . docs",
     "build": "gitbook build . docs",
+    "push": "bash .bin/push.sh",
     "test": "mocha --require @babel/register"
   },
   "repository": {
