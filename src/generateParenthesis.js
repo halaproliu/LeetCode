@@ -22,4 +22,4 @@ var generateParenthesis = function(n) {
     return res
 }
 
-console.log(generateParenthesis(4))
+export default generateParenthesis
