@@ -8,6 +8,7 @@
   },
   "scripts": {
     "gen": "bash .bin/genSummary.sh",
+    "create": "bash .bin/create.sh",
     "dev": "gitbook serve . docs",
     "build": "gitbook build . docs",
     "push": "bash .bin/push.sh",
