@@ -1,7 +1,7 @@
 #!/bin/bash
 execDir=$(pwd)
 dist=$execDir/problem/$1.md
-echo "# $1" >>$dist
+echo "# leetcode算法-$1" >>$dist
 echo >>$dist
 echo "### 问题描述" >>$dist
 echo >>$dist
