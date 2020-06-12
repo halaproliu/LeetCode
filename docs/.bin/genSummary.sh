@@ -11,10 +11,12 @@ os=${kernal%% *}
 # 参数2： 菜单排序
 function inputCategories() {
     if [ -d $1 ]; then
-        fileList=$(ls $1) # 文件列表
+        fileList=$(ls $1 | sort -n) # 文件列表
         i=0               # 菜单子排序
         for filename in $fileList; do
             if [[ $filename != "README.md" ]]; then
+                num=${filename%%-*}
+                title=${filename#*-}
                 let "i++"
                 echo "    * [${filename%.*}](./$1/$filename)" >>$summaryMD
                 # if [[ $os == 'Linux' ]]; then

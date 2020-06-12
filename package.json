@@ -12,6 +12,7 @@
     "dev": "gitbook serve . docs",
     "build": "gitbook build . docs",
     "push": "bash .bin/push.sh",
+    "deploy": "bash .bin/deploy.sh",
     "test": "mocha --require @babel/register"
   },
   "repository": {
