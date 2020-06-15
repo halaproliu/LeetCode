@@ -1,4 +1,4 @@
-h3 {
+/* h3 {
     margin-top: 30px;
     margin-bottom: 15px; 
     padding: 0px; 
@@ -24,7 +24,6 @@ h3:before {
     font-size: 0.8em;
 }
 
-  /* 三级标题内容 */
 h3 .content {
     display: inline-block; 
     font-weight: bold;
@@ -36,14 +35,12 @@ h3 .content {
     margin-right: 3px;
 }
 
-  /* 三级标题前缀 */
 #nice h3 .prefix {
 }
 
-/* 三级标题后缀 */
 #nice h3 .suffix {
     display: inline-block;
     vertical-align: bottom; 
     border-bottom: 36px solid #efebe9;
     border-right: 20px solid transparent;
-}
+} */
