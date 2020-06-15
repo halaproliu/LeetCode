@@ -21,12 +21,12 @@
         }
     },
     "plugins": [
+        "halapro",
         "search-plus",
         "anchors",
         "sharing-plus",
         "github",
         "github-buttons",
-        "code",
         "prism",
         "chapter-fold",
         "donate",
