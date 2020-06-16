@@ -60,7 +60,7 @@
             "copyButtons": true
         },
         "terminal": {
-            "copyButtons": true,
+            "copyButtons": false,
             "fade": false,
             "style": "flat"
         },
