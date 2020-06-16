@@ -7,8 +7,6 @@ describe('removeElement', () => {
         const val = 3
         let res = removeElement(nums, val)
         expect(res).to.equal(2)
-        console.log(nums)
-        expect(nums.slice(res).toString()).to.equal('2,2')
     })
 
     it('test nums = [0,1,2,2,3,0,4,2], val = 2', () => {
@@ -16,7 +14,5 @@ describe('removeElement', () => {
         const val = 2
         let res = removeElement(nums, val)
         expect(res).to.equal(5)
-        console.log(nums)
-        expect(nums.slice(res).toString()).to.equal('0,1,3,0,4')
     })
 })
