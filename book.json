@@ -28,7 +28,7 @@
         "prism",
         "chapter-fold",
         "donate",
-        "pageview-count",
+        "-pageview-count",
         "tbfed-pagefooter",
         "disqus"
     ],
@@ -48,17 +48,14 @@
             ]
         },
         "chapter-fold": {},
-        "tbfed-pagefooter": {
-            "copyright": "Copyright &copy halaproliu.github.io/gitbook 2019",
-            "modify_label": "该文件修订时间：",
-            "modify_format": "YYYY-MM-DD HH:mm:ss"
-        },
         "config": {
             "code": {
                 "copyButtons": true
             },
-            "sitemap": {
-                "hostname": "https://halaproliu.github.io/LeetCode"
+            "tbfed-pagefooter": {
+                "copyright": "Copyright &copy halaproliu.github.io/gitbook 2019",
+                "modify_label": "该文件修订时间：",
+                "modify_format": "YYYY-MM-DD HH:mm:ss"
             }
         },
         "prism": {
@@ -76,6 +73,9 @@
             "button": "赞赏",
             "alipayText": "支付宝捐赠",
             "wechatText": "微信捐赠"
+        },
+        "sitemap": {
+            "hostname": "https://halaproliu.github.io/LeetCode"
         },
         "disqus": {
             "shortName": "halaproliu"
