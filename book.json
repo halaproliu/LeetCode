@@ -23,17 +23,14 @@
     "plugins": [
         "halapro",
         "search-plus",
-        "anchors",
         "sharing-plus",
         "github",
-        "github-buttons",
         "prism",
         "chapter-fold",
         "donate",
         "pageview-count",
         "tbfed-pagefooter",
-        "disqus",
-        "sitemap"
+        "disqus"
     ],
     "pluginsConfig": {
         "github": {
@@ -56,13 +53,13 @@
             "modify_label": "该文件修订时间：",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
         },
-        "code": {
-            "copyButtons": true
-        },
-        "terminal": {
-            "copyButtons": false,
-            "fade": false,
-            "style": "flat"
+        "config": {
+            "code": {
+                "copyButtons": true
+            },
+            "sitemap": {
+                "hostname": "https://halaproliu.github.io/LeetCode"
+            }
         },
         "prism": {
             "css": [
@@ -79,9 +76,6 @@
             "button": "赞赏",
             "alipayText": "支付宝捐赠",
             "wechatText": "微信捐赠"
-        },
-        "sitemap": {
-            "hostname": "https://halaproliu.github.io/gitbook"
         },
         "disqus": {
             "shortName": "halaproliu"

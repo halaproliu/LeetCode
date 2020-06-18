@@ -24,24 +24,29 @@
         "run-script",
         "test"
       ],
+      "sourceMaps": true,
+      "env": {
+        "BABEL_ENV": "debug"
+      },
       "port": 9229
     },
     {
       "type": "node",
       "request": "launch",
-      "name": "Mocha Tests",
+      "name": "Mocha",
       "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
       "args": [
-        "-u",
-        "tdd",
-        "--timeout",
-        "999999",
-        "--colors",
-        "${workspaceFolder}/test",
+        "test/reverseKGroup.spec.js",
         "--require",
-        "@babel/register" 
+        "@babel/register",
+        "--timeout",
+        "99999999"
       ],
-      "sourceMaps": true
+      "cwd": "${workspaceRoot}",
+      "sourceMaps": true,
+      "env": {
+        "BABEL_ENV": "debug"
+      }
     },
     {
       "type": "node",
