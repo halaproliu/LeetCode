@@ -24,29 +24,11 @@
         "halapro",
         "search-plus",
         "sharing-plus",
-        "github",
         "prism",
         "chapter-fold",
-        "donate",
-        "-pageview-count",
-        "tbfed-pagefooter",
-        "disqus"
+        "donate"
     ],
     "pluginsConfig": {
-        "github": {
-            "url": "https://github.com/halaproliu"
-        },
-        "github-buttons": {
-            "buttons": [
-                {
-                    "user": "",
-                    "repo": "halaproliu",
-                    "type": "star",
-                    "size": "small",
-                    "count": true
-                }
-            ]
-        },
         "chapter-fold": {},
         "config": {
             "code": {
