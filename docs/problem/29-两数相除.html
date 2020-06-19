@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>PART Ⅰ - leetcode算法 · leetcode算法</title>
+        <title>29-两数相除 · leetcode算法</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -69,10 +69,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="面试题08.01-三步问题.html" />
     
-    
-    <link rel="prev" href="../" />
+    <link rel="prev" href="28-实现strStr(" />
     
 
     </head>
@@ -148,7 +146,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="./">
             
                 <a href="./">
             
@@ -539,7 +537,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.30" data-path="29-两数相除.html">
+        <li class="chapter active" data-level="1.2.30" data-path="29-两数相除.html">
             
                 <a href="29-两数相除.html">
             
@@ -587,7 +585,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >PART Ⅰ - leetcode算法</a>
+        <a href=".." >29-两数相除</a>
     </h1>
 </div>
 
@@ -605,10 +603,94 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <html><head></head><body><h1 id="leetcode&#x5B66;&#x4E60;"><a name="leetcode&#x5B66;&#x4E60;" class="plugin-anchor" href="#leetcode&#x5B66;&#x4E60;"><i class="fa fa-link" aria-hidden="true"></i></a>leetcode&#x5B66;&#x4E60;</h1>
-<p>&#x672C;&#x9879;&#x76EE;&#x65E8;&#x5728;&#x8BB0;&#x5F55;leetcode&#x7684;&#x5237;&#x9898;&#x4E4B;&#x8DEF;&#xFF0C;&#x8BB0;&#x5F55;&#x4E0B;&#x95EE;&#x9898;&#x548C;&#x89E3;&#x6CD5;&#xFF0C;&#x4EE5;&#x53CA;&#x6700;&#x7EC8;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x6B22;&#x8FCE;&#x5927;&#x5BB6;&#x7684;&#x6307;&#x6B63;&#xFF0C;&#x8C22;&#x8C22;&#x3002;</p>
+                                <html><head></head><body><h1 id="leetcode&#x7B97;&#x6CD5;-29-&#x4E24;&#x6570;&#x76F8;&#x9664;"><a name="leetcode&#x7B97;&#x6CD5;-29-&#x4E24;&#x6570;&#x76F8;&#x9664;" class="plugin-anchor" href="#leetcode&#x7B97;&#x6CD5;-29-&#x4E24;&#x6570;&#x76F8;&#x9664;"><i class="fa fa-link" aria-hidden="true"></i></a>leetcode&#x7B97;&#x6CD5;-29-&#x4E24;&#x6570;&#x76F8;&#x9664;</h1>
+<h3 id="&#x95EE;&#x9898;&#x63CF;&#x8FF0;"><a name="&#x95EE;&#x9898;&#x63CF;&#x8FF0;" class="plugin-anchor" href="#&#x95EE;&#x9898;&#x63CF;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x95EE;&#x9898;&#x63CF;&#x8FF0;</h3>
+<p>&#x7ED9;&#x5B9A;&#x4E24;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x88AB;&#x9664;&#x6570; dividend &#x548C;&#x9664;&#x6570; divisor&#x3002;&#x5C06;&#x4E24;&#x6570;&#x76F8;&#x9664;&#xFF0C;&#x8981;&#x6C42;&#x4E0D;&#x4F7F;&#x7528;&#x4E58;&#x6CD5;&#x3001;&#x9664;&#x6CD5;&#x548C; mod &#x8FD0;&#x7B97;&#x7B26;&#x3002;</p>
+<p>&#x8FD4;&#x56DE;&#x88AB;&#x9664;&#x6570; dividend &#x9664;&#x4EE5;&#x9664;&#x6570; divisor &#x5F97;&#x5230;&#x7684;&#x5546;&#x3002;</p>
+<p>&#x6574;&#x6570;&#x9664;&#x6CD5;&#x7684;&#x7ED3;&#x679C;&#x5E94;&#x5F53;&#x622A;&#x53BB;&#xFF08;truncate&#xFF09;&#x5176;&#x5C0F;&#x6570;&#x90E8;&#x5206;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;truncate(8.345) = 8 &#x4EE5;&#x53CA; truncate(-2.7335) = -2</p>
+<p><strong><em>&#x793A;&#x4F8B; 1:</em></strong></p>
+<pre class="language-"><code class="lang-js">&#x8F93;&#x5165;<span class="token operator">:</span> dividend <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span> divisor <span class="token operator">=</span> <span class="token number">3</span>
+&#x8F93;&#x51FA;<span class="token operator">:</span> <span class="token number">3</span>
+&#x89E3;&#x91CA;<span class="token operator">:</span> <span class="token number">10</span><span class="token operator">/</span><span class="token number">3</span> <span class="token operator">=</span> <span class="token function">truncate</span><span class="token punctuation">(</span><span class="token number">3.33333</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">truncate</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">3</span>
+</code></pre>
+<p><strong><em>&#x793A;&#x4F8B; 2:</em></strong></p>
+<pre class="language-"><code class="lang-js">&#x8F93;&#x5165;<span class="token operator">:</span> dividend <span class="token operator">=</span> <span class="token number">7</span><span class="token punctuation">,</span> divisor <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">3</span>
+&#x8F93;&#x51FA;<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">2</span>
+&#x89E3;&#x91CA;<span class="token operator">:</span> <span class="token number">7</span><span class="token operator">/</span><span class="token operator">-</span><span class="token number">3</span> <span class="token operator">=</span> <span class="token function">truncate</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">2.33333</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">2</span>
+</code></pre>
+<p><strong><em>&#x63D0;&#x793A;&#xFF1A;</em></strong></p>
+<ul>
+<li>&#x88AB;&#x9664;&#x6570;&#x548C;&#x9664;&#x6570;&#x5747;&#x4E3A; 32 &#x4F4D;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;&#x3002;</li>
+<li>&#x9664;&#x6570;&#x4E0D;&#x4E3A; 0&#x3002;</li>
+<li>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x7684;&#x73AF;&#x5883;&#x53EA;&#x80FD;&#x5B58;&#x50A8; 32 &#x4F4D;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;&#xFF0C;&#x5176;&#x6570;&#x503C;&#x8303;&#x56F4;&#x662F; [&#x2212;231,  231 &#x2212; 1]&#x3002;&#x672C;&#x9898;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x9664;&#x6CD5;&#x7ED3;&#x679C;&#x6EA2;&#x51FA;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; 231 &#x2212; 1&#x3002;</li>
+</ul>
+<p>&#x6765;&#x6E90;&#xFF1A;&#x529B;&#x6263;&#xFF08;LeetCode&#xFF09;
+&#x94FE;&#x63A5;&#xFF1A;<a href="https://leetcode-cn.com/problems/divide-two-integers" target="_blank">https://leetcode-cn.com/problems/divide-two-integers</a>
+&#x8457;&#x4F5C;&#x6743;&#x5F52;&#x9886;&#x6263;&#x7F51;&#x7EDC;&#x6240;&#x6709;&#x3002;&#x5546;&#x4E1A;&#x8F6C;&#x8F7D;&#x8BF7;&#x8054;&#x7CFB;&#x5B98;&#x65B9;&#x6388;&#x6743;&#xFF0C;&#x975E;&#x5546;&#x4E1A;&#x8F6C;&#x8F7D;&#x8BF7;&#x6CE8;&#x660E;&#x51FA;&#x5904;&#x3002;</p>
+<h3 id="&#x6C42;&#x89E3;"><a name="&#x6C42;&#x89E3;" class="plugin-anchor" href="#&#x6C42;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6C42;&#x89E3;</h3>
+<pre class="language-"><code class="lang-js"><span class="token comment">/**
+ * @param {number} dividend
+ * @param {number} divisor
+ * @return {number}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">divide</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">dividend<span class="token punctuation">,</span> divisor</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x662F;&#x5426;&#x662F;&#x6B63;&#x6570;</span>
+    <span class="token keyword">let</span> sign <span class="token operator">=</span> <span class="token punctuation">(</span>dividend <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> divisor <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token punctuation">(</span>dividend <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> divisor <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token comment">// &#x88AB;&#x9664;&#x6570;&#x7EDD;&#x5BF9;&#x503C;</span>
+    <span class="token keyword">let</span> a <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>dividend<span class="token punctuation">)</span>
+    <span class="token comment">// &#x5546;&#x7EDD;&#x5BF9;&#x503C;</span>
+    <span class="token keyword">let</span> b <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>divisor<span class="token punctuation">)</span>
+    <span class="token keyword">let</span> ans <span class="token operator">=</span> <span class="token string">&apos;&apos;</span>
+    <span class="token keyword">let</span> cur <span class="token operator">=</span> <span class="token string">&apos;&apos;</span>
+    <span class="token keyword">let</span> dividendStr <span class="token operator">=</span> a<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment">// &#x4F7F;&#x7528;&#x88AB;&#x9664;&#x6570;&#x51CF;&#x53BB;&#x5546;&#xFF0C;&#x4ECE;&#x9AD8;&#x4F4D;&#x5230;&#x4F4E;&#x4F4D;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> dividendStr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// &#x6BCF;&#x4E2A;&#x4F4D;&#x6570;&#x7684;&#x503C;</span>
+        <span class="token keyword">let</span> count <span class="token operator">=</span> <span class="token number">0</span>
+        cur <span class="token operator">+=</span> dividendStr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        cur <span class="token operator">=</span> <span class="token operator">+</span>cur
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>cur <span class="token operator">&gt;=</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            cur <span class="token operator">-=</span> b
+            count<span class="token operator">++</span>
+        <span class="token punctuation">}</span>
+        ans <span class="token operator">+=</span> count
+    <span class="token punctuation">}</span>
+    <span class="token keyword">const</span> <span class="token constant">INT_MAX</span> <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token comment">// 2147483647</span>
+    <span class="token keyword">const</span> <span class="token constant">INT_MIN</span> <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">)</span> <span class="token comment">// -2147483648</span>
+    ans <span class="token operator">=</span> <span class="token operator">+</span>ans
+    <span class="token comment">// &#x5224;&#x65AD;&#x7ED3;&#x679C;&#x662F;&#x5426;&#x8D85;&#x51FA;&#x8FB9;&#x754C;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>sign<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> ans <span class="token operator">&gt;</span> <span class="token constant">INT_MAX</span> <span class="token operator">?</span> <span class="token constant">INT_MAX</span> <span class="token operator">:</span> ans 
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span>ans <span class="token operator">&lt;</span> <span class="token constant">INT_MIN</span> <span class="token operator">?</span> <span class="token constant">INT_MIN</span> <span class="token operator">:</span> <span class="token operator">-</span>ans
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="&#x6267;&#x884C;&#x7ED3;&#x679C;"><a name="&#x6267;&#x884C;&#x7ED3;&#x679C;" class="plugin-anchor" href="#&#x6267;&#x884C;&#x7ED3;&#x679C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6267;&#x884C;&#x7ED3;&#x679C;</h3>
+<pre class="language-"><code class="lang-js">&#x6267;&#x884C;&#x7528;&#x65F6; <span class="token operator">:</span> <span class="token number">88</span>ms<span class="token punctuation">,</span> &#x5728;&#x6240;&#x6709; JavaScript &#x63D0;&#x4EA4;&#x4E2D;&#x51FB;&#x8D25;&#x4E86;<span class="token number">73.85</span><span class="token operator">%</span>&#x7684;&#x7528;&#x6237;
+&#x5185;&#x5B58;&#x6D88;&#x8017; <span class="token operator">:</span> <span class="token number">37.8</span>MB<span class="token punctuation">,</span> &#x5728;&#x6240;&#x6709; JavaScript &#x63D0;&#x4EA4;&#x4E2D;&#x51FB;&#x8D25;&#x4E86;<span class="token number">100.00</span><span class="token operator">%</span>&#x7684;&#x7528;&#x6237;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x63D0;&#x4EA4;&#x7ED3;&#x679C;</th>
+<th style="text-align:center">&#x6267;&#x884C;&#x7528;&#x65F6;</th>
+<th style="text-align:center">&#x5185;&#x5B58;&#x6D88;&#x8017;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&#x901A;&#x8FC7;</td>
+<td style="text-align:center">88ms</td>
+<td style="text-align:center">37.8MB</td>
+</tr>
+</tbody>
+</table>
+<p>&#x66F4;&#x591A;&#x524D;&#x7AEF;&#x8D44;&#x6599;&#x8BF7;&#x5173;&#x6CE8;&#x516C;&#x4F17;&#x53F7; <code>&#x3010;&#x4E09;&#x5206;&#x949F;&#x70ED;&#x5EA6;&#x5DE5;&#x7A0B;&#x5E08;&#x3011;</code></p>
+<p><img src="../imgs/qrcode.jpg" alt=""></p>
+<p>&#x5982;&#x679C;&#x89C9;&#x5F97;&#x5199;&#x5F97;&#x8FD8;&#x4E0D;&#x9519;&#xFF0C;&#x53EF;&#x4EE5;&#x5173;&#x6CE8;<a href="https://halaproliu.github.io/gitbook/shellmd5/2596084d37a462e93b62f7c136e9eb0e.html" target="_blank">gitbook&#x5C0F;&#x518C;</a></p>
 <footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">File Modify: 
-2020-06-02 22:23:23
+2020-06-19 22:54:30
 </span></footer></body></html>
                                 
                                 </section>
@@ -652,14 +734,10 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="28-实现strStr(" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 28-实现strStr()">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="面试题08.01-三步问题.html" class="navigation navigation-next " aria-label="Next page: 面试题08.01-三步问题">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -668,7 +746,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"PART Ⅰ - leetcode算法","level":"1.2","depth":1,"next":{"title":"面试题08.01-三步问题","level":"1.2.1","depth":2,"path":"problem/面试题08.01-三步问题.md","ref":"./problem/面试题08.01-三步问题.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["halapro","search-plus","sharing-plus","prism","chapter-fold","donate"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"],"lang":{"flow":"typescript"}},"disqus":{"shortName":"halaproliu"},"config":{"code":{"copyButtons":true},"tbfed-pagefooter":{"copyright":"Copyright &copy halaproliu.github.io/gitbook 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"}},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://halaproliu.github.io/gitbook/imgs/alipay.png","alipayText":"支付宝捐赠","button":"赞赏","title":"","wechat":"https://halaproliu.github.io/gitbook/imgs/wechatPay.png","wechatText":"微信捐赠"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"https://halaproliu.github.io/LeetCode"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{},"halapro":{}},"theme":"default","author":"halapro.liu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"leetcode算法","language":"zh-hans","links":{"sidebar":{"博客":"https://halaproliu.github.io/","github":"https://github.com/halaproliu","掘金":"https://juejin.im/user/59f8378f6fb9a045263ae315","简书":"https://www.jianshu.com/u/fdf0c90358ac","blog":"http://liuwenjian.cn/#/","JSONformat":"https://halaproliu.gitee.io/react-antd-redux/#/json"}},"gitbook":"3.2.3","description":"leetcode"},"file":{"path":"problem/README.md","mtime":"2020-06-02T14:23:23.701Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-19T14:56:53.505Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"29-两数相除","level":"1.2.30","depth":2,"previous":{"title":"28-实现strStr()","level":"1.2.29","depth":2,"path":"problem/28-实现strStr(","ref":"./problem/28-实现strStr(","articles":[]},"dir":"ltr"},"config":{"plugins":["halapro","search-plus","sharing-plus","prism","chapter-fold","donate"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"],"lang":{"flow":"typescript"}},"disqus":{"shortName":"halaproliu"},"config":{"code":{"copyButtons":true},"tbfed-pagefooter":{"copyright":"Copyright &copy halaproliu.github.io/gitbook 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"}},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://halaproliu.github.io/gitbook/imgs/alipay.png","alipayText":"支付宝捐赠","button":"赞赏","title":"","wechat":"https://halaproliu.github.io/gitbook/imgs/wechatPay.png","wechatText":"微信捐赠"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"https://halaproliu.github.io/LeetCode"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{},"halapro":{}},"theme":"default","author":"halapro.liu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"leetcode算法","language":"zh-hans","links":{"sidebar":{"博客":"https://halaproliu.github.io/","github":"https://github.com/halaproliu","掘金":"https://juejin.im/user/59f8378f6fb9a045263ae315","简书":"https://www.jianshu.com/u/fdf0c90358ac","blog":"http://liuwenjian.cn/#/","JSONformat":"https://halaproliu.gitee.io/react-antd-redux/#/json"}},"gitbook":"3.2.3","description":"leetcode"},"file":{"path":"problem/29-两数相除.md","mtime":"2020-06-19T14:54:30.685Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-19T14:56:53.505Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
