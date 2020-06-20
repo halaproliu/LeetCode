@@ -1,5 +1,4 @@
 import threeSum from '../src/threeSum'
-import { isArrayEqual } from '../utils/array'
 import { expect } from 'chai'
 
 describe('threeSum', () => {
@@ -9,6 +8,6 @@ describe('threeSum', () => {
             [-1, 0, 1],
             [-1, -1, 2]
         ]
-        expect(isArrayEqual(threeSum(arr), res)).to.equal(true)
+        expect(threeSum(arr)).to.have.deep.members(res)
     })
 })

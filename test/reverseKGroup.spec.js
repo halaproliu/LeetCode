@@ -9,7 +9,6 @@ describe('reverseKGroup', () => {
         let k = 2
         let res = reverseKGroup(head, k)
         let ans = transformNodeToArray(res)
-        console.log(ans)
         expect(ans.toString()).to.equal('2,1,4,3,5')
     })
 })
