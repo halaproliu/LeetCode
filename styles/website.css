@@ -44,3 +44,44 @@ h3 .content {
     border-bottom: 36px solid #efebe9;
     border-right: 20px solid transparent;
 }
+
+pre.language- {
+    background: #252526;
+}
+
+code.lang-js {
+    color: #9CDCFE;
+}
+code.lang-js span.token {
+    color: #9CDCFE;
+}
+/* code.lang-js span.token.comment:nth-last-child(1):first-child {
+    color: #6A9955;
+} */
+code.lang-js span.token.comment span.token.comment {
+    color: #6A9955;
+}
+code.lang-js span.token.keyword {
+    color: #569CD6;
+}
+code.lang-js span.token.function-variable {
+    color: #9CDCFE;
+}
+code.lang-js span.token.function {
+    color: #DCDCAA;
+}
+code.lang-js span.token.operator {
+    color: #D4D4D4;
+}
+code.lang-js span.token.punctuation {
+    color: #D4D4D4;
+}
+code.lang-js span.token.number {
+    color: #B5CEA8;
+}
+code.lang-js span.token.parameter {
+    color: #B5CEA8;
+}
+code.lang-js span.token.class-name {
+    color: #4EC9B0;
+}
