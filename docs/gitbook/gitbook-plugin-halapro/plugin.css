@@ -1,0 +1,278 @@
+#code-textarea {
+    height: 0;
+    position: fixed;
+    top: -1000px;
+    width: 0;
+}
+
+.code-wrapper {
+    position: relative;
+}
+
+.code-wrapper i {
+    color: #c1c7cd;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+}
+
+.code-wrapper pre {
+    background: #f7f8f9;
+    border-radius: 3px;
+    counter-reset: line;
+    font-size: 15px;
+}
+
+.code-wrapper pre > code > span.code-line:before {
+    counter-increment: line;
+    color: #c1c7cd;
+    content: counter(line);
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 1.5em;
+    width: 1em;
+}
+
+/** 锚点 */
+a.plugin-anchor {
+    color: inherit !important;
+    display: none;
+    margin-left: -30px;
+    padding-left: 40px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+a.plugin-anchor i {
+    margin-left: -30px;
+    font-size: 15px !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+}
+
+h1:hover a.plugin-anchor,
+h2:hover a.plugin-anchor,
+h3:hover a.plugin-anchor,
+h4:hover a.plugin-anchor,
+h5:hover a.plugin-anchor,
+h6:hover a.plugin-anchor {
+    display: inline-block;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal {
+    overflow: visible;
+}
+
+/**footer */
+.page-footer {
+    margin-top: 50px;
+    border-top: 1px solid #ccc;
+    overflow: hidden;
+    padding: 10px 0;
+    font-size: 12px;
+    color: #808080;
+}
+
+.page-footer a {
+    color: #808080!important;
+    text-decoration: underline!important;
+}
+
+.footer-modification {
+    float: right;
+}
+
+/* h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding: 0px;
+    font-weight: bold;
+    color: black;
+    border-bottom: 2px solid rgb(239, 112, 96);
+    font-size: 1.3em;
+}
+
+h3 .prefix {
+    display: none;
+}
+
+h3 .content {
+    display: inline-block;
+    font-weight: bold;
+    background: rgb(239, 112, 96);
+    color: #ffffff;
+    padding: 3px 10px 1px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    margin-right: 3px;
+}
+
+h3 .suffix {
+    display: inline-block;
+    vertical-align: bottom;
+    border-bottom: 36px solid #efebe9;
+    border-right: 20px solid transparent;
+} */
+
+pre.terminal {
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    overflow-x: hidden;
+    padding: 0;
+    position: relative;
+}
+
+pre.terminal code {
+    display: block;
+    margin: 1em 2em 0 1em;
+    padding-bottom: 1em;
+    overflow-x: auto;
+}
+
+pre.terminal span.t-line {
+    display: block;
+}
+
+pre.terminal.t-fade span.t-line:not(.t-prompt-line),
+pre.terminal.t-fade span.t-delimiter,
+pre.terminal.t-fade span.t-path,
+pre.terminal.t-fade span.t-prompt {
+    transition: opacity 0.3s ease-in-out;
+}
+
+pre.terminal.t-fade:hover span.t-line:not(.t-prompt-line),
+pre.terminal.t-fade:hover span.t-delimiter,
+pre.terminal.t-fade:hover span.t-path,
+pre.terminal.t-fade:hover span.t-prompt {
+    opacity: 0.3;
+}
+
+pre.terminal > i.t-copy {
+    cursor: pointer;
+    margin-top: 0.3em;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0.4em;
+    transition: opacity 0.3s ease-in-out;
+}
+
+pre.terminal:hover > i.t-copy {
+    opacity: 1;
+}
+
+#t-textarea {
+    height: 0;
+    position: fixed;
+    top: -1000px;
+    width: 0;
+}
+
+pre.terminal .code-line span {
+    color: #fff;
+}
+
+pre.terminal.t-black {
+    background-color: #222;
+    color: #dedede;
+}
+
+pre.terminal.t-black .t-prompt {
+    font-weight: bold;
+}
+
+pre.terminal.t-classic {
+    background-color: black;
+    color: lawngreen;
+}
+
+pre.terminal.t-classic .t-error {
+    color: red;
+}
+
+pre.terminal.t-classic .t-warning {
+    color: orange;
+}
+
+pre.terminal.t-flat {
+    background-color: #2b3d50;
+    color: #dedede;
+}
+
+pre.terminal.t-flat .t-delimiter {
+    color: #60b0e5;
+}
+
+pre.terminal.t-flat .t-error {
+    color: #f55
+}
+
+pre.terminal.t-flat .t-prompt {
+    color: #28c66e;
+}
+
+pre.terminal.t-flat .t-warning {
+    color: #d93;
+}
+
+pre.terminal.t-flat .t-command {
+    color: #fff;
+}
+
+pre.terminal.t-ubuntu {
+    background-color: #300b24;
+    color: #b8c4c5;
+}
+
+pre.terminal.t-ubuntu .t-error {
+    color: #e22227;
+}
+
+pre.terminal.t-ubuntu .t-path {
+    color: #475ca0;
+}
+
+pre.terminal.t-ubuntu .t-prompt {
+    color: #84cc40;
+}
+
+pre.terminal.t-ubuntu .t-warning {
+    color: #d93;
+}
+
+pre.terminal.t-ubuntu .t-command {
+    color: #fff;
+}
+
+pre.terminal.t-white {
+    background-color: white;
+    color: #333;
+}
+
+pre.terminal.t-white .t-error {
+    color: #e22227;
+}
+
+pre.terminal.t-white .t-path {
+    color: #475ca0;
+}
+
+pre.terminal.t-white .t-prompt {
+    color: #4caf50;
+}
+
+pre.terminal.t-white .t-warning {
+    color: #d93;
+}
