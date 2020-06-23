@@ -52,7 +52,7 @@
       "type": "node",
       "request": "launch",
       "name": "leetcode",
-      "program": "${workspaceFolder}/src/findSubstring.js"
+      "program": "${workspaceFolder}/src/quickSort.js"
     }
   ]
 }

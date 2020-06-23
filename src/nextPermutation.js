@@ -1,40 +1,38 @@
+function swap (nums, i, j) {
+    [nums[i], nums[j]] = [nums[j], nums[i]]
+}
+
+function reverse(nums, start, end) {
+    while (start < end) {
+        swap(nums, start, end)
+        start++
+        end--
+    }
+}
+
 /**
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var nextPermutation = function(nums) {
-    const len = nums.length;
+    const len = nums.length
 
-    if(len <= 2) return nums.reverse();
-    let index = len - 2;
-    
-    while(index > 0){
-        if(nums[index] < nums[index + 1]){
-            break;
-        } 
-        index--;
+    let i = nums.length - 2
+    // 找到第一个右侧数 大于 左侧数的 下标 i
+    while (i >= 0 && nums[i + 1] <= nums[i]) {
+        i--
     }
-    if(index === 0 && nums.concat().sort((a, b) => b - a)[0] === nums[0] ){
-        return nums.reverse();
-    }
-    let indexOfmin = index + 1;
-    let min = nums[indexOfmin] - nums[index];
-    
-    for(let i = index + 1; i < len; i++){
-        if(nums[i] > nums[index] && Math.min(nums[i] - nums[index], min) !== min){
-            indexOfmin = i;
+    // 如果i < 0 则代表这个数组不存在更大的排列即降序，所以只需要转化为升序即可
+    if (i >= 0) {
+        let j = nums.length - 1
+        // 如果i大于0，则从右到左开始找 第一个大于 i下标数字的 下标 j
+        while (j > 0 && nums[j] <= nums[i]) {
+            j--
         }
+        swap(nums, i, j)
     }
-
-    [nums[index], nums[indexOfmin]] = [nums[indexOfmin], nums[index]];
-    let arr = nums.slice(index + 1);
-    arr.sort((a, b) => a - b);
-    for(let i = index + 1; i < len; i++){
-        nums[i] = arr[i - index - 1]
-    }
-    
-
-    return nums
+    // 将i下标往后的 数组 进行反序，变成最小排列；因为i往后的子数组一定是降序的
+    reverse(nums, i + 1, len - 1)
 };
 
 export default nextPermutation
