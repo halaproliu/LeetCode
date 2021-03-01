@@ -1,7 +1,7 @@
-import { findSubstring } from '../src/findSubstring'
+import findSubstring from '../src/findSubstring'
 import { expect } from 'chai'
 
-expect('findSubstring', () => {
+describe('findSubstring', () => {
     it ('test s="barfoothefoobarman", words = ["foo","bar"], ans = [0, 9]', () => {
         let ans = findSubstring('barfoothefoobarman', ["foo","bar"])
         expect(ans).to.have.members([0, 9])
