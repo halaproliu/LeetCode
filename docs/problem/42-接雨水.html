@@ -1,0 +1,889 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>42-接雨水 · leetcode算法</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="halapro.liu">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-halapro/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="102-二叉树的层序遍历.html" />
+    
+    
+    <link rel="prev" href="32-最长有效括号.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://halaproliu.github.io/" target="_blank" class="custom-link">博客</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://github.com/halaproliu" target="_blank" class="custom-link">github</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://juejin.im/user/59f8378f6fb9a045263ae315" target="_blank" class="custom-link">掘金</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://www.jianshu.com/u/fdf0c90358ac" target="_blank" class="custom-link">简书</a>
+        </li>
+    
+        
+        <li>
+            <a href="http://liuwenjian.cn/#/" target="_blank" class="custom-link">blog</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://halaproliu.gitee.io/react-antd-redux/#/json" target="_blank" class="custom-link">JSONformat</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    PART Ⅰ - leetcode算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="面试题08.01-三步问题.html">
+            
+                <a href="面试题08.01-三步问题.html">
+            
+                    
+                    面试题08.01-三步问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="面试题08.06-汉诺塔问题.html">
+            
+                <a href="面试题08.06-汉诺塔问题.html">
+            
+                    
+                    面试题08.06-汉诺塔问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="1-两数之和.html">
+            
+                <a href="1-两数之和.html">
+            
+                    
+                    1-两数之和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="2-两数相加.html">
+            
+                <a href="2-两数相加.html">
+            
+                    
+                    2-两数相加
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="3-无重复字符的最长子串.html">
+            
+                <a href="3-无重复字符的最长子串.html">
+            
+                    
+                    3-无重复字符的最长子串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="4-寻找两个正序数组的中位数.html">
+            
+                <a href="4-寻找两个正序数组的中位数.html">
+            
+                    
+                    4-寻找两个正序数组的中位数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="5-最长回文子串.html">
+            
+                <a href="5-最长回文子串.html">
+            
+                    
+                    5-最长回文子串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="6-Z字形变换.html">
+            
+                <a href="6-Z字形变换.html">
+            
+                    
+                    6-Z字形变换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="7-整数翻转.html">
+            
+                <a href="7-整数翻转.html">
+            
+                    
+                    7-整数翻转
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="8-字符串转换整数.html">
+            
+                <a href="8-字符串转换整数.html">
+            
+                    
+                    8-字符串转换整数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="9-回文数.html">
+            
+                <a href="9-回文数.html">
+            
+                    
+                    9-回文数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="11-盛最多水的容器.html">
+            
+                <a href="11-盛最多水的容器.html">
+            
+                    
+                    11-盛最多水的容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="12-整数转罗马数字.html">
+            
+                <a href="12-整数转罗马数字.html">
+            
+                    
+                    12-整数转罗马数字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="13-罗马数字转整数.html">
+            
+                <a href="13-罗马数字转整数.html">
+            
+                    
+                    13-罗马数字转整数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="14-最长公共前缀.html">
+            
+                <a href="14-最长公共前缀.html">
+            
+                    
+                    14-最长公共前缀
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="15-三数之和.html">
+            
+                <a href="15-三数之和.html">
+            
+                    
+                    15-三数之和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="16-最接近的三数之和.html">
+            
+                <a href="16-最接近的三数之和.html">
+            
+                    
+                    16-最接近的三数之和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="17-电话号码的字母组合.html">
+            
+                <a href="17-电话号码的字母组合.html">
+            
+                    
+                    17-电话号码的字母组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="18-四数之和.html">
+            
+                <a href="18-四数之和.html">
+            
+                    
+                    18-四数之和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="19-删除链表的倒数第N个节点.html">
+            
+                <a href="19-删除链表的倒数第N个节点.html">
+            
+                    
+                    19-删除链表的倒数第N个节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.21" data-path="20-有效的括号.html">
+            
+                <a href="20-有效的括号.html">
+            
+                    
+                    20-有效的括号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.22" data-path="21-合并两个有序链表.html">
+            
+                <a href="21-合并两个有序链表.html">
+            
+                    
+                    21-合并两个有序链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.23" data-path="22-括号生成.html">
+            
+                <a href="22-括号生成.html">
+            
+                    
+                    22-括号生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.24" data-path="23-合并K个排序链表.html">
+            
+                <a href="23-合并K个排序链表.html">
+            
+                    
+                    23-合并K个排序链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.25" data-path="24-两两交换链表中的节点.html">
+            
+                <a href="24-两两交换链表中的节点.html">
+            
+                    
+                    24-两两交换链表中的节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.26" data-path="25-K个一组翻转链表.html">
+            
+                <a href="25-K个一组翻转链表.html">
+            
+                    
+                    25-K个一组翻转链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.27" data-path="26-删除排序数组中的重复项.html">
+            
+                <a href="26-删除排序数组中的重复项.html">
+            
+                    
+                    26-删除排序数组中的重复项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.28" data-path="27-移除元素.html">
+            
+                <a href="27-移除元素.html">
+            
+                    
+                    27-移除元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.29" data-path="28-实现strStr.html">
+            
+                <a href="28-实现strStr.html">
+            
+                    
+                    28-实现strStr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.30" data-path="29-两数相除.html">
+            
+                <a href="29-两数相除.html">
+            
+                    
+                    29-两数相除
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.31" data-path="30-串联所有单词的子串.html">
+            
+                <a href="30-串联所有单词的子串.html">
+            
+                    
+                    30-串联所有单词的子串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.32" data-path="31-下一个排列.html">
+            
+                <a href="31-下一个排列.html">
+            
+                    
+                    31-下一个排列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.33" data-path="32-最长有效括号.html">
+            
+                <a href="32-最长有效括号.html">
+            
+                    
+                    32-最长有效括号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.34" data-path="42-接雨水.html">
+            
+                <a href="42-接雨水.html">
+            
+                    
+                    42-接雨水
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.35" data-path="102-二叉树的层序遍历.html">
+            
+                <a href="102-二叉树的层序遍历.html">
+            
+                    
+                    102-二叉树的层序遍历
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >42-接雨水</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><h1 id="&#x63A5;&#x96E8;&#x6C34;"><a name="&#x63A5;&#x96E8;&#x6C34;" class="plugin-anchor" href="#&#x63A5;&#x96E8;&#x6C34;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x63A5;&#x96E8;&#x6C34;</h1>
+<h3 id="&#x95EE;&#x9898;&#x63CF;&#x8FF0;"><a name="&#x95EE;&#x9898;&#x63CF;&#x8FF0;" class="plugin-anchor" href="#&#x95EE;&#x9898;&#x63CF;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x95EE;&#x9898;&#x63CF;&#x8FF0;</h3>
+<p>&#x7ED9;&#x5B9A; n &#x4E2A;&#x975E;&#x8D1F;&#x6574;&#x6570;&#x8868;&#x793A;&#x6BCF;&#x4E2A;&#x5BBD;&#x5EA6;&#x4E3A; 1 &#x7684;&#x67F1;&#x5B50;&#x7684;&#x9AD8;&#x5EA6;&#x56FE;&#xFF0C;&#x8BA1;&#x7B97;&#x6309;&#x6B64;&#x6392;&#x5217;&#x7684;&#x67F1;&#x5B50;&#xFF0C;&#x4E0B;&#x96E8;&#x4E4B;&#x540E;&#x80FD;&#x63A5;&#x591A;&#x5C11;&#x96E8;&#x6C34;&#x3002;</p>
+<p>&#x793A;&#x4F8B; 1&#xFF1A;</p>
+<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/10/22/rainwatertrap.png" alt=""></p>
+<pre class="language-"><code class="lang-js">&#x8F93;&#x5165;&#xFF1A;height <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span>
+&#x8F93;&#x51FA;&#xFF1A;<span class="token number">6</span>
+&#x89E3;&#x91CA;&#xFF1A;&#x4E0A;&#x9762;&#x662F;&#x7531;&#x6570;&#x7EC4; <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span> &#x8868;&#x793A;&#x7684;&#x9AD8;&#x5EA6;&#x56FE;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x63A5; <span class="token number">6</span> &#x4E2A;&#x5355;&#x4F4D;&#x7684;&#x96E8;&#x6C34;&#xFF08;&#x84DD;&#x8272;&#x90E8;&#x5206;&#x8868;&#x793A;&#x96E8;&#x6C34;&#xFF09;&#x3002;
+</code></pre>
+<p>&#x793A;&#x4F8B; 2&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">&#x8F93;&#x5165;&#xFF1A;height <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+&#x8F93;&#x51FA;&#xFF1A;<span class="token number">9</span>
+</code></pre>
+<p>&#x63D0;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">n <span class="token operator">==</span> height<span class="token punctuation">.</span>length
+<span class="token number">0</span> <span class="token operator">&lt;=</span> n <span class="token operator">&lt;=</span> <span class="token number">3</span> <span class="token operator">*</span> <span class="token number">104</span>
+<span class="token number">0</span> <span class="token operator">&lt;=</span> height<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token number">105</span>
+</code></pre>
+<h3 id="&#x6C42;&#x89E3;"><a name="&#x6C42;&#x89E3;" class="plugin-anchor" href="#&#x6C42;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6C42;&#x89E3;</h3>
+<pre class="language-"><code class="lang-js"><span class="token comment">// &#x66B4;&#x529B;&#x6CD5;&#xFF0C;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n^2),&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)</span>
+<span class="token keyword">function</span> <span class="token function">trap</span> <span class="token punctuation">(</span><span class="token parameter">height</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>height<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span>
+    <span class="token keyword">let</span> n <span class="token operator">=</span> height<span class="token punctuation">.</span>length
+    <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> l_max <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">let</span> r_max <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> i<span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// &#x627E;&#x53F3;&#x8FB9;&#x6700;&#x9AD8;&#x7684;&#x67F1;&#x5B50;</span>
+            r_max <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>r_max<span class="token punctuation">,</span> height<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> i<span class="token punctuation">;</span> j <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// &#x627E;&#x5DE6;&#x8FB9;&#x6700;&#x9AD8;&#x7684;&#x67F1;&#x5B50;</span>
+            l_max <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>l_max<span class="token punctuation">,</span> height<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+
+        res <span class="token operator">+=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>l_max<span class="token punctuation">,</span> r_max<span class="token punctuation">)</span> <span class="token operator">-</span> height<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> res
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class="language-"><code class="lang-js"><span class="token comment">// &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1), &#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)</span>
+<span class="token keyword">function</span> <span class="token function">trap</span> <span class="token punctuation">(</span><span class="token parameter">height</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>height<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span>
+    <span class="token keyword">let</span> n <span class="token operator">=</span> height<span class="token punctuation">.</span>length
+    <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">let</span> l_max <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+    <span class="token keyword">let</span> r_max <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+
+    l_max<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> height<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    r_max<span class="token punctuation">[</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> height<span class="token punctuation">[</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token comment">// &#x8BA1;&#x7B97;l_max&#xFF0C;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        l_max<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>height<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> l_max<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// &#x8BA1;&#x7B97;r_max&#xFF0C;&#x4ECE;&#x53F3;&#x5230;&#x5DE6;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        r_max<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>height<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> r_max<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        res <span class="token operator">+=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>l_max<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> r_max<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span> height<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> res
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class="language-"><code class="lang-js"><span class="token comment">// &#x53CC;&#x6307;&#x9488;</span>
+<span class="token keyword">function</span> <span class="token function">trap</span> <span class="token punctuation">(</span><span class="token parameter">height <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>height<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span>
+    <span class="token keyword">const</span> n <span class="token operator">=</span> height<span class="token punctuation">.</span>length
+    <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">let</span> left <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">let</span> right <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">1</span>
+
+    <span class="token keyword">let</span> l_max <span class="token operator">=</span> height<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token keyword">let</span> r_max <span class="token operator">=</span> height<span class="token punctuation">[</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;=</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        l_max <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>l_max<span class="token punctuation">,</span> height<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        r_max <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>r_max<span class="token punctuation">,</span> height<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>l_max <span class="token operator">&lt;</span> r_max<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            res <span class="token operator">+=</span> l_max <span class="token operator">-</span> height<span class="token punctuation">[</span>left<span class="token punctuation">]</span>
+            left<span class="token operator">++</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            res <span class="token operator">+=</span> r_max <span class="token operator">-</span> height<span class="token punctuation">[</span>right<span class="token punctuation">]</span>
+            right<span class="token operator">--</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> res
+<span class="token punctuation">}</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; halaproliu.github.io/gitbook 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2021-03-02 01:24:20
+</span></footer></body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="32-最长有效括号.html" class="navigation navigation-prev " aria-label="Previous page: 32-最长有效括号">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="102-二叉树的层序遍历.html" class="navigation navigation-next " aria-label="Next page: 102-二叉树的层序遍历">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"42-接雨水","level":"1.2.34","depth":2,"next":{"title":"102-二叉树的层序遍历","level":"1.2.35","depth":2,"path":"problem/102-二叉树的层序遍历.md","ref":"./problem/102-二叉树的层序遍历.md","articles":[]},"previous":{"title":"32-最长有效括号","level":"1.2.33","depth":2,"path":"problem/32-最长有效括号.md","ref":"./problem/32-最长有效括号.md","articles":[]},"dir":"ltr"},"config":{"plugins":["halapro","search-plus","sharing-plus","prism","chapter-fold","donate"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"],"lang":{"flow":"typescript"}},"disqus":{"shortName":"halaproliu"},"config":{"code":{"copyButtons":true},"tbfed-pagefooter":{"copyright":"Copyright &copy halaproliu.github.io/gitbook 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"}},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://halaproliu.github.io/gitbook/imgs/alipay.png","alipayText":"支付宝捐赠","button":"赞赏","title":"","wechat":"https://halaproliu.github.io/gitbook/imgs/wechatPay.png","wechatText":"微信捐赠"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"https://halaproliu.github.io/LeetCode"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{},"halapro":{}},"theme":"default","author":"halapro.liu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"leetcode算法","language":"zh-hans","links":{"sidebar":{"博客":"https://halaproliu.github.io/","github":"https://github.com/halaproliu","掘金":"https://juejin.im/user/59f8378f6fb9a045263ae315","简书":"https://www.jianshu.com/u/fdf0c90358ac","blog":"http://liuwenjian.cn/#/","JSONformat":"https://halaproliu.gitee.io/react-antd-redux/#/json"}},"gitbook":"3.2.3","description":"leetcode"},"file":{"path":"problem/42-接雨水.md","mtime":"2021-03-01T17:24:20.894Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-01T17:29:49.351Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-halapro/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
